@@ -22,3 +22,20 @@ app.set('port', process.env.PORT || 5000)
   	console.log('Listening on port: ' + app.get('port'));
   });
 
+  const cors = require('cors') // Place this with other requires (like 'path' and 'express')
+  
+  const corsOptions = {
+      origin: "https://cse341-simi.herokuapp.com/",
+      optionsSuccessStatus: 200
+  };
+  app.use(cors(corsOptions));
+  
+  const options = {
+      useUnifiedTopology: true,
+      useNewUrlParser: true,
+      useCreateIndex: true,
+      useFindAndModify: false,
+      family: 4
+  };
+  
+  const MONGODB_URL = process.env.MONGODB_URL || "mongodb+srv://<username>:<username>@cse341cluster-3dwlw.mongodb.net/test?retryWrites=true&w=majority";

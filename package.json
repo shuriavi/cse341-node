@@ -19,5 +19,8 @@
   "homepage": "https://github.com/shuriavi/cse341-node#readme",
   "devDependencies": {
     "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "cors": "^2.8.5"
   }
 }
